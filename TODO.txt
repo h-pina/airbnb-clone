@@ -1,0 +1,39 @@
+--------------------------------------------- Projeto --------------------------------------------- 
+
+-- O que vou fazer
+    --Buscar por acomodacoes
+        -- Listagem dos Lugares
+            - Pagina propria pro lugar
+        -- Reserva
+        -- Categorizacao
+        -- Sistema de Favoritos
+-- O que nao vou fazer
+    -- Sistema de Usuarios
+    -- Buscar por experiencias
+
+-- o Que talvez eu faca se estiver muito animado
+    -- Adicionar CMS pra criacao de novas acomodacoes
+    -- Adicionar Modais, Botoes, e telas de configuração secundarias (tipo as configs de linguagem), mesmo que elas nao tenham suas funcoes implementadas
+
+
+
+---------------------------------- Day 1
+
+- Install Dependencies (Next, tailwind)
+- Header
+  - Upper Header
+  - Lower Header
+- Botao Exibirt Mapa
+- Grid Acomodacoes
+- Footer (Mobile Only)
+
+
+---------------------------------- Day 2
+
+
+
+
+
+
+
+---------------------------------- Day 3
