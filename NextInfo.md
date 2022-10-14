@@ -24,8 +24,7 @@
     - Lower Header -> Categorias
   - Botao Exibir Mapa
   - Grid Acomodacoes (Lista de Acomodacoes)
-  - Footer - Mobile, com pesquisar, favoritos e entrar - Desktop, com Privacidade, termos, mapa do site, etc
-    --
+  - ## Footer - Mobile, com pesquisar, favoritos e entrar - Desktop, com Privacidade, termos, mapa do site, etc
 
 ---------------------------------- Phase 2 - Back end
 
@@ -33,4 +32,4 @@ DB Schema - MySQL - Criar conexao - Arquitetura de Schemas - Acomodacao - ID - F
 
 ---------------------------------- Phase 3 - Integrations
 
-Node + Express + GraphQL?
+Node + Express + Axios?
