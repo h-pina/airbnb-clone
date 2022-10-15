@@ -1,0 +1,50 @@
+.header {
+  height: 100px;
+  margin: 0;
+  position: sticky;
+}
+
+.UpperHeader {
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.logoContainer {
+  width: (1/3) * 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 118px;
+  cursor: pointer;
+}
+
+.searchBarContainer {
+  width: (1/3) * 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar {
+  height: 44px;
+  width: 432px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid #dddddd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.userButtonsContainer {
+  width: (1/3) * 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.userButtons {
+  height: 40px;
+  display: flex;
+}
