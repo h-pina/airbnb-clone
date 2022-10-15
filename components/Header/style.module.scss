@@ -1,50 +1,170 @@
-.header {
-  height: 100px;
-  margin: 0;
-  position: sticky;
+@mixin layout(
+  $logoPadding,
+  $logoSectionSize,
+  $logoSize,
+  $searchBarSectionSize,
+  $searchBarSize,
+  $displayLogo,
+  $displayUserButtons
+) {
+  .header {
+    height: 100px;
+    margin: 0;
+    position: sticky;
+    display: flex;
+    height: 80px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .logoSection {
+    width: $logoSectionSize;
+    display: $displayLogo;
+    align-items: center;
+  }
+
+  .logoContainer {
+    width: $logoSize;
+    margin-left: $logoPadding;
+    cursor: pointer;
+  }
+
+  .searchBarSection {
+    width: $searchBarSectionSize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchBar {
+    height: 44px;
+    width: $searchBarSize;
+    border-radius: 25px;
+    margin-left: 24px;
+    margin-right: 24px;
+    outline: none;
+    border: 1px solid #dddddd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .userButtonsSection {
+    width: (1/3) * 100vw;
+    display: $displayUserButtons;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .userButtons {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+  }
+
+  .worldIconButton {
+    width: 20px;
+    display: flex;
+    border-radius: 320px;
+    padding: 13px;
+
+    cursor: pointer;
+  }
+
+  .worldIconButton:hover {
+    background-color: rgb(240, 240, 240);
+  }
+
+  .userOptionsContainer {
+    border: 1px solid #dddddd;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+  }
+
+  .userOptions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .userOptionsContainer:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
 }
 
-.UpperHeader {
-  display: flex;
-  height: 80px;
-  border-bottom: 1px solid #dddddd;
+@media screen and (min-width: 1430px) {
+  @include layout(
+    $logoPadding: 80px,
+    $logoSize: 110px,
+    $logoSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSize: 335px,
+    $displayLogo: flex,
+    $displayUserButtons: flex
+  );
 }
 
-.logoContainer {
-  width: (1/3) * 100vw;
-  display: flex;
-  align-items: center;
+@media screen and (max-width: 1430px) {
+  @include layout(
+    $logoPadding: 40px,
+    $logoSize: 110px,
+    $logoSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSize: 335px,
+    $displayLogo: flex,
+    $displayUserButtons: flex
+  );
 }
 
-.logo {
-  width: 118px;
-  cursor: pointer;
+@media screen and (max-width: 1130px) {
+  @include layout(
+    $logoPadding: 40px,
+    $logoSize: 33px,
+    $logoSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSize: 335px,
+    $displayLogo: flex,
+    $displayUserButtons: flex
+  );
 }
 
-.searchBarContainer {
-  width: (1/3) * 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 934px) {
+  @include layout(
+    $logoPadding: 40px,
+    $logoSize: 33px,
+    $logoSectionSize: auto,
+    $searchBarSectionSize: (
+      (1/3) * 100vw,
+    ),
+    $searchBarSize: 335px,
+    $displayLogo: flex,
+    $displayUserButtons: flex
+  );
 }
 
-.searchBar {
-  height: 44px;
-  width: 432px;
-  border-radius: 25px;
-  outline: none;
-  border: 1px solid #dddddd;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.userButtonsContainer {
-  width: (1/3) * 100vw;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.userButtons {
-  height: 40px;
-  display: flex;
+@media screen and (max-width: 742px) {
+  @include layout(
+    $logoPadding: 0px,
+    $logoSize: 0x,
+    $logoSectionSize: auto,
+    $searchBarSectionSize: 100vw,
+    $searchBarSize: 100vw,
+    $displayLogo: none,
+    $displayUserButtons: none
+  );
 }
