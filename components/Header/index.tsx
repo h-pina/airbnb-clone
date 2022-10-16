@@ -12,10 +12,10 @@ import WorldIcon from "../../svg/worldIcon.js";
 import PersonIcon from "../../svg/personIcon.js";
 import Bars from "../../svg/bars.js";
 
-//TODO: Cara tenho certeza que essa estrutura pode ser melhor, mas de inicio foi o melhor que consegui pensar. Acho que o CSS pode ser mais compacto tbm
-//TODO: Criar um novo componente pra parte das categorias. Isso vai ficar muito grande se for tudo pro Header
+//TODO: Passar esses styles inline para o css??
+//TODO: Completar Botao central de pesquisa
 const Header: FC = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<Number>();
 
   useEffect(() => {
     function handleWindowResize() {
@@ -25,19 +25,38 @@ const Header: FC = () => {
     window.addEventListener("resize", handleWindowResize);
 
     return () => {
-      window.removeEventListener("resize", handleWindowResize); //??
+      handleWindowResize();
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  const debugAnywhere = () => console.log("Anywhere Click");
+  const debughAnyWeek = () => console.log("AnyWeek Click");
+  const debugAddGuests = () => console.log("AddGuests Click");
+
   return (
     <header className={styles.header}>
       <div className={styles.logoSection}>
         <div className={styles.logoContainer}>
-          {windowWidth > 1130 ? <FullLogo /> : <ReducedLogo />}
+          {windowWidth && (windowWidth > 1130 ? <FullLogo /> : <ReducedLogo />)}
         </div>
       </div>
 
       <div className={styles.searchBarSection}>
-        <input className={styles.searchBar} type="text" />
+        <div className={styles.searchBar}>
+          <button onClick={debugAnywhere} className={styles.srchBarButton}>
+            Anywhere
+          </button>
+          <span />
+          <button onClick={debughAnyWeek} className={styles.srchBarButton}>
+            Any week
+          </button>
+          <span />
+          <button onClick={debugAddGuests} className={styles.srchBarButton}>
+            Add guests
+          </button>
+          <span>O</span>
+        </div>
       </div>
       <div className={styles.userButtonsSection}>
         <div className={styles.userButtons}>
